@@ -14,7 +14,7 @@
 
 case "$HSH_ACTION" in
 	clone|bundle-out)
-		pk install msmtp
-		pk install isync
+		yes | pk install msmtp
+		yes | pk install isync
 		;;
 esac

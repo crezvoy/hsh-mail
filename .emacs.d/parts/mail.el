@@ -11,7 +11,7 @@
 	mu4e-compose-format-flowed t
 	mu4e-confirm-quit nil
 	mu4e-headers-auto-update t
-	mu4e-maildir "~/.local/share/mail/"
+	mu4e-maildir "~/.local/share/mail"
 	mu4e-show-addresses t
 	mu4e-view-prefer-html t
         message-send-mail-function 'message-send-mail-with-sendmail

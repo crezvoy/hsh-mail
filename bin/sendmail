@@ -1,0 +1,5 @@
+#!/bin/sh
+
+[ -e "$HOME/.config/msmtp/config" ] && rm "$HOME/.config/msmtp/config"
+cat $HOME/.config/msmtp/* > "$HOME/.config/msmtp/config"
+msmtp --file "$HOME/.config/msmtp/config" --read-envelope-from "$@"

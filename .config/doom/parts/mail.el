@@ -6,7 +6,11 @@
 
 (after! mu4e
   (setq mu4e-attachment-dir "~/Downloads"
-        ;; sendmail-program "~/bin/sendmail"
+        sendmail-program "~/bin/sendmail"
+        message-send-mail-function 'message-send-mail-with-sendmail
+        message-sendmail-extra-arguments '("--read-envelope-from")
+        message-sendmail-f-is-evil 't
+        sendmail-program "~/bin/sendmail"
         mu4e-get-mail-command "~/bin/fetchmail"
         mu4e-bookmarks '(("maildir:/.*/inbox/" "Unread messages" ?u)
                          ("date:today..now" "Today's messages" ?t)
@@ -19,11 +23,6 @@
 ;; (require 'org-mime)
 ;; (setq +mu4e-mu4e-mail-path "~/Maildir"
 ;;       message-kill-buffer-on-exit t
-;;       message-send-mail-function 'message-send-mail-with-sendmail
-;;       mu4e-bookmarks '(("maildir:/.*/inbox/" "Unread messages" ?u)
-;;                        ("date:today..now" "Today's messages" ?t)
-;;                        ("date:7d..now" "Last Seven Days" ?w)
-;;                        ("size:500k.. AND date:..1y" "Large and old mails" ?c)
 ;;       mu4e-change-filenames-when-moving t
 ;;       mu4e-compose-compose-in-new-frame t
 ;;       mu4e-confirm-quit nil
@@ -37,10 +36,7 @@
 ;;       mu4e-view-prefer-html t
 ;;       mu4e-view-show-addresses t
 ;;       mu4e-view-show-images t
-;;       message-send-mail-function 'message-send-mail-with-sendmail
-;;       message-sendmail-extra-arguments '("--read-envelope-from")
 ;;       message-sendmail-f-is-evil 't
-;;       mu4e-attachment-dir "~/Downloads"
 ;;       org-mu4e-convert-to-html t
 ;;       sendmail-program "~/bin/sendmail"))
 ;; (add-to-list 'mu4e-view-actions

@@ -5,7 +5,9 @@
 (setq +mu4e-backend nil)
 
 (after! mu4e
-  (setq mu4e-attachment-dir "~/Downloads"
+  (setq mu4e-use-fancy-chars t
+        mu4e-view-use-gnus t
+        mu4e-attachment-dir "~/Downloads"
         sendmail-program "~/bin/sendmail"
         message-send-mail-function 'message-send-mail-with-sendmail
         message-sendmail-extra-arguments '("--read-envelope-from")

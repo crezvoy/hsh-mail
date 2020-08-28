@@ -2,14 +2,16 @@
 
 ls "$HOME/.config/mbsync" | while IFS= read -r cfg
 do
-    [ -d "$HOME/Maildir/$cfg" ] || mkdir -p "$HOME/Maildir/$cfg"
+    maildir="$HOME/.mail/$cfg"
+    [ -d "$maildir" ] || mkdir -p "$maildir"
     mbsync -c "$HOME/.config/mbsync/$cfg" -a
     ls -1 "$maildir" | while IFS= read -r dir
     do
-	[ -d "$maildir/$dir/new" ] || continue
-	[ -d "$maildir/$dir/cur" ] || mkdir "$maildir/$dir/cur"
-	ls -1 "$maildir/$dir/new" | while IFS= read -r mail; do
-	    mv "$mail" "$maildir/$dir/cur"
-	done
+        [ -d "$maildir/$dir/new" ] || continue
+        [ -d "$maildir/$dir/cur" ] || mkdir "$maildir/$dir/cur"
+        ls -1 "$maildir/$dir/new" | while IFS= read -r mail;
+        do
+            mv "$maildir/$dir/new/$mail" "$maildir/$dir/cur"
+        done
     done
 done

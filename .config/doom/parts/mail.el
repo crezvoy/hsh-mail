@@ -5,6 +5,8 @@
 (setq +mu4e-backend nil)
 
 (after! mu4e
+  (require 'org-mu4e)
+;; (require 'org-mime)
   (setq mu4e-use-fancy-chars t
         mu4e-view-use-gnus t
         mu4e-attachment-dir "~/Downloads"
@@ -21,8 +23,6 @@
 
 
 
-;; (require 'org-mu4e)
-;; (require 'org-mime)
 ;; (setq +mu4e-mu4e-mail-path "~/Maildir"
 ;;       message-kill-buffer-on-exit t
 ;;       mu4e-change-filenames-when-moving t

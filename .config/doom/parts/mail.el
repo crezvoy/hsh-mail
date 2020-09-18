@@ -14,12 +14,17 @@
         message-send-mail-function 'message-send-mail-with-sendmail
         message-sendmail-extra-arguments '("--read-envelope-from")
         message-sendmail-f-is-evil 't
+        mu4e-update-interval 300
+        mu4e-index-update-in-background t
         sendmail-program "~/bin/sendmail"
         mu4e-get-mail-command "~/bin/fetchmail"
         mu4e-bookmarks '(("maildir:/.*/inbox/" "Unread messages" ?u)
                          ("date:today..now" "Today's messages" ?t)
                          ("date:7d..now" "Last Seven Days" ?w)
-                         ("size:500k.. AND date:..1y" "Large and old mails" ?c))))
+                         ("size:500k.. AND date:..1y" "Large and old mails" ?c)))
+  (add-hook 'after-init-hook #'mu4e-alert-enable-notifications))
+
+
 
 
 

@@ -14,7 +14,8 @@
 
 case "$HSH_ACTION" in
 	clone|bundle-out)
-		yes | "$HSH_ROOT/bin/pk" install msmtp
-		yes | "$HSH_ROOT/bin/pk" install isync
+		brew install msmtp
+		brew install isync
+		brew install mu
 		;;
 esac
